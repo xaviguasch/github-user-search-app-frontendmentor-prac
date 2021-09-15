@@ -22,6 +22,7 @@
   --fs-08: 0.5em;
   --fs-09: 0.563em;
   --fs-10: 0.625rem;
+  --fs-11: 0.688rem;
   --fs-12: 0.75rem;
   --fs-13: 0.813rem;
   --fs-14: 0.875rem;
@@ -76,4 +77,87 @@ img {
 
 /* ================== */
 /* Typography */
+/* ================== */
+
+.title {
+  color: var(--clr-very-dark-blue);
+  font-size: var(--fs-26);
+  font-weight: var(--fw-bold);
+  text-transform: lowercase;
+}
+
+.mode__type {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-bold);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.full-name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-bold);
+  color: var(--clr-very-dark-blue);
+}
+
+.twitter-handle {
+  font-size: var(--fs-13);
+  color: var(--clr-blue);
+}
+
+.starting-date {
+  font-size: var(--fs-13);
+  color: var(--clr-gray);
+}
+
+.bio {
+  font-size: var(--fs-13);
+}
+
+.measure__name {
+  font-size: var(--fs-11);
+}
+
+.measure__unit {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-bold);
+  color: var(--clr-very-dark-blue);
+}
+
+.list-el {
+  font-size: var(--fs-13);
+}
+
+.attribution {
+  font-size: var(--fs-12);
+  font-size: var(--fs-14);
+  color: var(--clr-gray);
+}
+
+/* ================== */
+/* Links */
+/* ================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer__link {
+  color: var(--clr-almost-black);
+  font-weight: var(--fw-bold);
+}
+
+/* ================== */
+/* Buttons & inputs */
+/* ================== */
+
+/* ================== */
+/* Utility styles */
 /* ================== */
