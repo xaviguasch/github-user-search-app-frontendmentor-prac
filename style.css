@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================== */
+/* Custom properties */
+/* ================== */
+
+:root {
+  --ff-main: 'Space Mono', monospace;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-07: 0.438rem;
+  --fs-08: 0.5em;
+  --fs-09: 0.563em;
+  --fs-10: 0.625rem;
+  --fs-12: 0.75rem;
+  --fs-13: 0.813rem;
+  --fs-14: 0.875rem;
+  --fs-15: 0.938rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+  --fs-26: 1.625rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-36: 2.25rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --fs-56: 3.5rem;
+  --fs-60: 3.75rem;
+  --fs-64: 4rem;
+  --fs-72: 4.5rem;
+  --fs-80: 5rem;
+
+  /* Primary */
+  --clr-blue: hsla(212, 100%, 50%, 1);
+
+  /* Light Mode */
+  --clr-gray: hsla(217, 20%, 51%, 1);
+  --clr-asphalt: hsla(217, 35%, 45%, 1);
+  --clr-very-dark-blue: hsla(217, 21%, 21%, 1);
+  --clr-very-light-gray: hsl(228, 100%, 98%);
+  --clr-almost-white: hsla(0, 0%, 100%, 1);
+
+  /* Dark Mode */
+  --clr-white: hsla(0, 0%, 100%, 1);
+  --clr-almost-black: hsla(220, 40%, 13%, 1);
+  --clr-dark-blue: hsla(222, 41%, 20%, 1);
+}
+
+body {
+  background-color: var(--clr-very-light-gray);
+  color: var(--clr-asphalt);
+  font-family: var(--ff-main);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-regular);
+  line-height: 1.92;
+  text-align: left;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ================== */
+/* Typography */
+/* ================== */
