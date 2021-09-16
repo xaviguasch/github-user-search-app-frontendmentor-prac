@@ -257,7 +257,7 @@ input:focus::placeholder {
 
   border-radius: 0.5em;
   box-shadow: var(--box-shadow);
-  visibility: visible;
+  visibility: visible; /* https://css-tricks.com/snippets/css/toggle-visibility-when-hiding-elements/ */
   opacity: 1;
   transition: visibility 0s, opacity 0.5s linear;
 }

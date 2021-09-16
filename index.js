@@ -97,6 +97,7 @@ const fillCardWithData = (data) => {
   } else {
     twitter.textContent = twitter_username
     twitter.parentElement.style.opacity = 1
+    twitter.href = `https://twitter.com/${twitter_username}`
   }
 
   if (!company) {
