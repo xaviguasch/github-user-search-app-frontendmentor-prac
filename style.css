@@ -331,6 +331,34 @@ input:focus::placeholder {
   margin-top: 0.75em;
 }
 
-.info ul {
+.info {
+  display: flex;
+  flex-direction: column;
+  place-content: flex-start flex-start;
+  gap: 1em;
+}
+
+.info--list-a,
+.info--list-b {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
   list-style: none;
+}
+
+.list-el {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8125em;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 0.5em;
+}
+
+.footer__text {
+  text-align: center;
 }
