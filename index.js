@@ -1,18 +1,20 @@
 const form = document.querySelector('#form')
 const search = document.querySelector('#search')
+const card = document.querySelector('.card')
+const footer = document.querySelector('.footer')
 
 let avatar = document.querySelector('#avatar')
 let fullName = document.querySelector('.full-name')
 let githubHandle = document.querySelector('.github-handle')
 let date = document.querySelector('.date')
-let bio = document.querySelector('.bio')
-let repos = document.querySelector('#repos')
-let followers = document.querySelector('#followers')
-let following = document.querySelector('#following')
+let biography = document.querySelector('.bio')
+let reposSel = document.querySelector('#repos')
+let followersSel = document.querySelector('#followers')
+let followingSel = document.querySelector('#following')
 let locationOrPlace = document.querySelector('#location')
-let blog = document.querySelector('#blog')
+let blogSel = document.querySelector('#blog')
 let twitter = document.querySelector('#twitter')
-let company = document.querySelector('#company')
+let companySel = document.querySelector('#company')
 
 const showError = (error) => {
   console.log('do something with this errror: ', error)
@@ -44,20 +46,66 @@ const fromISOStringToLongDate = (date) => {
 }
 
 const fillCardWithData = (data) => {
-  fullName.textContent = data.login
-  githubHandle.textContent = data.name
-  avatar.src = data.avatar_url
+  let {
+    login,
+    name,
+    avatar_url,
+    created_at,
+    bio,
+    public_repos,
+    followers,
+    following,
+    location,
+    blog,
+    twitter_username,
+    company,
+  } = data
 
-  date.textContent = fromISOStringToLongDate(data.created_at)
-  bio.textContent = data.bio
-  repos.textContent = data.public_repos
-  followers.textContent = data.followers
-  following.textContent = data.following
-  locationOrPlace.textContent = data.location
-  blog.textContent = data.blog
-  blog.href = data.blog
-  twitter.textContent = data.twitter_username // implement greying out if there's no data
-  company.textContent = `@${data.company}`
+  card.classList.remove('hidden')
+  footer.classList.remove('hidden')
+
+  fullName.textContent = login
+  githubHandle.textContent = name ? name : 'not available'
+  avatar.src = avatar_url
+
+  date.textContent = fromISOStringToLongDate(created_at)
+  biography.textContent = bio ? bio : 'Bio not available'
+  reposSel.textContent = public_repos
+  followersSel.textContent = followers
+  followingSel.textContent = following
+
+  if (!location) {
+    locationOrPlace.textContent = 'Not available'
+    locationOrPlace.parentElement.style.opacity = 0.5
+  } else {
+    locationOrPlace.textContent = location
+    locationOrPlace.parentElement.style.opacity = 1
+  }
+
+  if (!blog) {
+    blogSel.textContent = 'Not available'
+    blogSel.parentElement.style.opacity = 0.5
+  } else {
+    blogSel.textContent = blog
+    blogSel.href = blog
+    blogSel.parentElement.style.opacity = 1
+  }
+
+  if (!twitter_username) {
+    twitter.parentElement.style.opacity = 0.5
+    twitter.textContent = 'Not available'
+  } else {
+    twitter.textContent = twitter_username
+    twitter.parentElement.style.opacity = 1
+  }
+
+  if (!company) {
+    companySel.parentElement.style.opacity = 0.5
+    companySel.textContent = 'Not available'
+  } else {
+    companySel.textContent = `@${company}`
+    companySel.parentElement.style.opacity = 1
+  }
 }
 
 form.addEventListener('submit', (e) => {

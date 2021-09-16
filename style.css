@@ -257,6 +257,15 @@ input:focus::placeholder {
 
   border-radius: 0.5em;
   box-shadow: var(--box-shadow);
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.card.hidden,
+.footer.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .card__main-grid {
@@ -353,6 +362,9 @@ input:focus::placeholder {
 /* FOOTER */
 .footer {
   margin-top: 0.5em;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .footer__text {
