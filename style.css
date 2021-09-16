@@ -280,10 +280,6 @@ input:focus::placeholder {
   grid-row: 1 / 2;
 }
 
-.card__avatar img {
-  padding-top: 0.5em;
-}
-
 .card__inner-grid-1 {
   /* As children grid */
   grid-column: 2 / -1;

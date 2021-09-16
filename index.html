@@ -30,7 +30,7 @@
       </header>
 
       <main class="main">
-        <form action="#" class="form">
+        <form action="#" class="form" id="form">
           <span class="svg-icon-search">
             <svg height="24" width="25" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -39,7 +39,7 @@
               />
             </svg>
           </span>
-          <input type="text" placeholder="Search GitHub username..." />
+          <input id="search" type="text" placeholder="Search GitHub username..." />
           <button class="btn">Search</button>
           <span class="error-message">No results</span>
         </form>
@@ -47,11 +47,15 @@
         <div class="card">
           <div class="card__main-grid">
             <div class="card__avatar">
-              <img src="./assets/octocat/Octocat.png" alt="octocat, github mascot" />
+              <img
+                id="avatar"
+                src="./assets/octocat/Octocat.png"
+                alt="octocat, github mascot"
+              />
             </div>
             <div class="card__inner-grid-1">
               <h2 class="full-name">The Octocat</h2>
-              <p class="twitter-handle">@octocat</p>
+              <p class="github-handle">@octocat</p>
               <p class="starting-date">Joined <span class="date">25 Jan 2011</span></p>
             </div>
             <div class="card__inner-grid-2">
@@ -59,18 +63,19 @@
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
                 Quisque volutpat mattis eros.
               </p>
+
               <div class="stats">
                 <div class="measure">
                   <p class="measure__name">Repos</p>
-                  <span class="measure__unit">8</span>
+                  <span id="repos" class="measure__unit">8</span>
                 </div>
                 <div class="measure">
                   <p class="measure__name">Followers</p>
-                  <span class="measure__unit">3938</span>
+                  <span id="followers" class="measure__unit">3938</span>
                 </div>
                 <div class="measure">
                   <p class="measure__name">Following</p>
-                  <span class="measure__unit">9</span>
+                  <span id="following" class="measure__unit">9</span>
                 </div>
               </div>
               <div class="info">
@@ -79,13 +84,13 @@
                     <div class="icon">
                       <img src="./assets/icon-location.svg" alt="icon location" />
                     </div>
-                    <p>San Francisco</p>
+                    <p id="location">San Francisco</p>
                   </li>
                   <li class="list-el">
                     <div class="icon">
                       <img src="./assets/icon-website.svg" alt="icon website" />
                     </div>
-                    <a href="https://github.blog" target="_blank" class="list-el__link">
+                    <a id="blog" href="#" target="_blank" class="list-el__link">
                       https://github.blog
                     </a>
                   </li>
@@ -95,13 +100,15 @@
                     <div class="icon">
                       <img src="./assets/icon-twitter.svg" alt="icon twitter" />
                     </div>
-                    <p>Not available</p>
+                    <a id="twitter" href="#" target="_blank" class="list-el__link">
+                      Not available
+                    </a>
                   </li>
                   <li class="list-el">
                     <div class="icon">
                       <img src="./assets/icon-company.svg" alt="icon company" />
                     </div>
-                    <p>@github</p>
+                    <p id="company">@github</p>
                   </li>
                 </ul>
               </div>
