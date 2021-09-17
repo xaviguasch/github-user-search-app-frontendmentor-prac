@@ -614,3 +614,9 @@ input:focus::placeholder {
     row-gap: 2.15em;
   }
 }
+
+@media (max-height: 745px) {
+  .wrapper {
+    margin-top: 0em;
+  }
+}
