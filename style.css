@@ -617,6 +617,10 @@ input:focus::placeholder {
 
 @media (max-height: 745px) {
   .wrapper {
-    margin-top: 0em;
+    margin-top: 1em;
+  }
+
+  .main {
+    margin-top: 0.5em;
   }
 }
