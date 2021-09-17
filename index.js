@@ -2,6 +2,7 @@ const form = document.querySelector('#form')
 const search = document.querySelector('#search')
 const card = document.querySelector('.card')
 const footer = document.querySelector('.footer')
+const errorMsg = document.querySelector('.error-message')
 
 let avatar = document.querySelector('#avatar')
 let fullName = document.querySelector('.full-name')
@@ -13,10 +14,14 @@ let followersSel = document.querySelector('#followers')
 let followingSel = document.querySelector('#following')
 let locationOrPlace = document.querySelector('#location')
 let blogSel = document.querySelector('#blog')
-let twitter = document.querySelector('#twitter')
+let twitterSel = document.querySelector('#twitter')
 let companySel = document.querySelector('#company')
 
 const showError = (error) => {
+  search.textContent = ''
+  errorMsg.classList.add('show')
+  card.classList.add('hidden')
+  footer.classList.add('hidden')
   console.log('do something with this errror: ', error)
 }
 
@@ -63,6 +68,7 @@ const fillCardWithData = (data) => {
 
   card.classList.remove('hidden')
   footer.classList.remove('hidden')
+  errorMsg.classList.remove('show')
 
   fullName.textContent = login
   githubHandle.textContent = name ? name : 'not available'
@@ -92,12 +98,12 @@ const fillCardWithData = (data) => {
   }
 
   if (!twitter_username) {
-    twitter.parentElement.style.opacity = 0.5
-    twitter.textContent = 'Not available'
+    twitterSel.parentElement.style.opacity = 0.5
+    twitterSel.textContent = 'Not available'
   } else {
-    twitter.textContent = twitter_username
-    twitter.parentElement.style.opacity = 1
-    twitter.href = `https://twitter.com/${twitter_username}`
+    twitterSel.textContent = twitter_username
+    twitterSel.parentElement.style.opacity = 1
+    twitterSel.href = `https://twitter.com/${twitter_username}`
   }
 
   if (!company) {
@@ -113,5 +119,10 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   const username = search.value
 
-  getData(username).then((data) => fillCardWithData(data))
+  getData(username)
+    .then((data) => fillCardWithData(data))
+    .catch((err) => console.log('error coming from promise: ', err))
 })
+
+// Removes error message when you focus on the input
+search.addEventListener('focus', () => errorMsg.classList.remove('show'))

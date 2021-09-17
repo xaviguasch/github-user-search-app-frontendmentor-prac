@@ -46,6 +46,7 @@
 
   /* Primary */
   --clr-blue: hsla(212, 100%, 50%, 1);
+  --clr-red: hsla(0, 91%, 62%, 1);
 
   /* Light Mode */
   --clr-gray: hsla(217, 20%, 51%, 1);
@@ -220,6 +221,9 @@ input:focus::placeholder {
 /* MAIN */
 .main {
   margin-top: 2.25em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 475px;
 }
 
 /* Form */
@@ -233,6 +237,8 @@ input:focus::placeholder {
   display: flex;
   place-items: center;
   box-shadow: var(--box-shadow);
+
+  position: relative;
 }
 
 .svg-icon-search {
@@ -246,6 +252,15 @@ input:focus::placeholder {
 
 .error-message {
   display: none;
+}
+
+.error-message.show {
+  display: block;
+
+  position: absolute;
+  top: 15px;
+  right: 100px;
+  color: var(--clr-red);
 }
 
 /* Card */
