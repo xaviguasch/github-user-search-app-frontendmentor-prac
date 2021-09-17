@@ -46,6 +46,7 @@
 
   /* Primary */
   --clr-blue: hsla(212, 100%, 50%, 1);
+  --clr-faded-blue: hsl(212, 100%, 69%);
   --clr-red: hsla(0, 91%, 62%, 1);
 
   /* Light Mode */
@@ -101,7 +102,7 @@ img {
   color: var(--clr-very-dark-blue);
 }
 
-.twitter-handle {
+.github-handle {
   font-size: var(--fs-13);
   color: var(--clr-blue);
 }
@@ -169,6 +170,12 @@ a:active {
   font-size: var(--fs-14);
   font-weight: var(--fw-bold);
   color: var(--clr-white);
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--clr-faded-blue);
 }
 
 input[type='text'] {
@@ -198,6 +205,7 @@ input:focus::placeholder {
 .wrapper {
   margin: 2em auto 4.875em;
   max-width: 475px;
+  padding: 0 1.5em;
 }
 
 /* ================== */
@@ -356,10 +364,8 @@ input:focus::placeholder {
   gap: 1em;
 }
 
-.info--list-a,
-.info--list-b {
-  display: flex;
-  flex-direction: column;
+.info--list {
+  display: grid;
   gap: 1em;
 
   list-style: none;
@@ -390,6 +396,35 @@ input:focus::placeholder {
 
 /* TABLET */
 @media (min-width: 768px) {
+  /* Typography */
+  .full-name {
+    font-size: var(--fs-26);
+  }
+
+  .github-handle {
+    font-size: var(--fs-16);
+  }
+
+  .starting-date {
+    font-size: var(--fs-15);
+  }
+
+  .bio {
+    font-size: var(--fs-15);
+  }
+
+  .measure__name {
+    font-size: var(--fs-13);
+  }
+
+  .measure__unit {
+    font-size: var(--fs-22);
+  }
+
+  .footer__text {
+    font-size: var(--fs-12);
+  }
+
   /* Buttons & inputs */
   input[type='text'] {
     font-size: var(--fs-18);
@@ -413,6 +448,7 @@ input:focus::placeholder {
     max-width: 573px;
 
     margin: 8.75em auto 0;
+    padding: 0;
   }
 
   /* SECTIONS */
@@ -441,11 +477,140 @@ input:focus::placeholder {
     margin-top: 1.5em;
 
     padding: 2.5em;
+  }
 
-    border-radius: 0.5em;
-    box-shadow: var(--box-shadow);
-    visibility: visible; /* https://css-tricks.com/snippets/css/toggle-visibility-when-hiding-elements/ */
-    opacity: 1;
-    transition: visibility 0s, opacity 0.5s linear;
+  .card__main-grid {
+    column-gap: 2.5em;
+    row-gap: 1.5em;
+  }
+
+  .card__avatar {
+    width: 117px;
+    height: 117px;
+    margin-top: 0;
+  }
+
+  .starting-date {
+    margin-top: 0;
+  }
+
+  .card__inner-grid-2 {
+    margin-top: 0;
+
+    /* As mother grid */
+    row-gap: 1.875em;
+  }
+
+  .stats {
+    padding: 1em 2em 0.75em;
+
+    justify-content: center;
+  }
+
+  .measure {
+    text-align: left;
+    width: 100%;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 1.25em;
+  }
+
+  .info--list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 1.1875em;
+  }
+
+  .list-el {
+    font-size: var(--fs-15);
+    width: 100%;
+
+    gap: 1em;
+  }
+
+  .list-el--location {
+    grid-row: 1 / 2;
+    grid-column: 1 /2;
+  }
+  .list-el--blog {
+    grid-row: 2 / 3;
+    grid-column: 1 /2;
+  }
+  .list-el--twitter {
+    grid-row: 1 / 2;
+    grid-column: 2 /3;
+  }
+  .list-el--company {
+    grid-row: 2 / 3;
+    grid-column: 2 /3;
+  }
+}
+
+/* LAPTOP */
+@media (min-width: 1030px) {
+  /* Utility styles */
+  .wrapper {
+    max-width: 730px;
+  }
+
+  /* SECTIONS */
+
+  /* Card */
+  .card {
+    padding: 3em;
+  }
+
+  .card__main-grid {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(10, auto);
+    column-gap: 2em;
+    row-gap: 0em;
+  }
+
+  .card__avatar {
+    grid-row: 1 / 4;
+  }
+
+  .card__inner-grid-1 {
+    /* As children grid */
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+
+    /* As mother grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .full-name {
+    grid-column: 1 /2;
+    grid-row: 1 /2;
+  }
+
+  .github-handle {
+    grid-column: 1 /2;
+    grid-row: 2 /3;
+  }
+  .starting-date {
+    grid-column: 2 /3;
+    grid-row: 1 /2;
+  }
+
+  .card__inner-grid-2 {
+    /* As children grid */
+    grid-column: 2/ -1;
+    grid-row: 3/ -1;
+
+    margin-top: 0;
+
+    /* As mother grid */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 2.15em;
   }
 }

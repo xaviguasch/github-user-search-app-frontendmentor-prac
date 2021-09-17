@@ -71,7 +71,7 @@ const fillCardWithData = (data) => {
   errorMsg.classList.remove('show')
 
   fullName.textContent = login
-  githubHandle.textContent = name ? name : 'not available'
+  githubHandle.textContent = name ? `@${name}` : 'not available'
   avatar.src = avatar_url
 
   date.textContent = fromISOStringToLongDate(created_at)
