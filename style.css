@@ -196,7 +196,8 @@ input:focus::placeholder {
 /* ================== */
 
 .wrapper {
-  margin: 2em 1.5em 4.875em;
+  margin: 2em auto 4.875em;
+  max-width: 475px;
 }
 
 /* ================== */
@@ -220,10 +221,7 @@ input:focus::placeholder {
 
 /* MAIN */
 .main {
-  margin-top: 2.25em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 475px;
+  margin: 2.25em auto 0;
 }
 
 /* Form */
@@ -384,4 +382,70 @@ input:focus::placeholder {
 
 .footer__text {
   text-align: center;
+}
+
+/* ================== */
+/* MEDIA QUERIES */
+/* ================== */
+
+/* TABLET */
+@media (min-width: 768px) {
+  /* Buttons & inputs */
+  input[type='text'] {
+    font-size: var(--fs-18);
+  }
+
+  input::placeholder {
+    font-size: var(--fs-18);
+  }
+
+  .btn {
+    display: inline-block;
+    height: 100%;
+    padding: 0.75em 1.45em;
+    border-radius: 0.625em;
+
+    font-size: var(--fs-16);
+  }
+
+  /* Utility styles */
+  .wrapper {
+    max-width: 573px;
+
+    margin: 8.75em auto 0;
+  }
+
+  /* SECTIONS */
+  /* Main */
+  .main {
+    max-width: unset;
+  }
+
+  /* Form */
+  .form {
+    padding: 0.6em 0.4em 0.6em 2em;
+    height: 70px;
+  }
+
+  .svg-icon-search {
+    margin-right: 1.5em;
+  }
+
+  .error-message.show {
+    top: 20px;
+    right: 140px;
+  }
+
+  /* Card */
+  .card {
+    margin-top: 1.5em;
+
+    padding: 2.5em;
+
+    border-radius: 0.5em;
+    box-shadow: var(--box-shadow);
+    visibility: visible; /* https://css-tricks.com/snippets/css/toggle-visibility-when-hiding-elements/ */
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
 }
