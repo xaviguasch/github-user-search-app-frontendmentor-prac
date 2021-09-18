@@ -22,21 +22,18 @@ const showError = (error) => {
   errorMsg.classList.add('show')
   card.classList.add('hidden')
   footer.classList.add('hidden')
-  console.log('do something with this errror: ', error)
 }
 
 async function getData(user) {
   const API = 'https://api.github.com/users/'
 
-  try {
-    const request = await fetch(API + user)
-    if (!request.ok) {
-      throw new Error(request.status)
-    }
+  const request = await fetch(API + user)
+
+  if (!request.ok) {
+    throw new Error(request.status)
+  } else {
     const data = await request.json()
     return data
-  } catch (error) {
-    showError(error.message)
   }
 }
 
@@ -121,7 +118,7 @@ form.addEventListener('submit', (e) => {
 
   getData(username)
     .then((data) => fillCardWithData(data))
-    .catch((err) => console.log('error coming from promise: ', err))
+    .catch((err) => showError(err))
 })
 
 // Removes error message when you focus on the input
